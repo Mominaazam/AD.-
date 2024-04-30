@@ -88,15 +88,27 @@ WSGI_APPLICATION = 'studybud.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 #import psycopg2
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'AD.',
+#         'USER': 'postgres',
+#         'PASSWORD': '0786',
+#         'PORT': '5432', #'3306',  # MySQL default port
+#         'HOST': 'localhost'
+#     }
+# }
+
+import os
+
+# Make sure DATABASE_URL is set in your environment
+os.environ.setdefault('DATABASE_URL', 'postgres://avnadmin:AVNS_kec8E2WSZoEVp-o5lt0@pg-2c318de-harrykennedy-23b8.g.aivencloud.com:28088/defaultdb?sslmode=require')
+
+# Now you can use this config
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'AD.',
-        'USER': 'postgres',
-        'PASSWORD': '0786',
-        'PORT': '5432', #'3306',  # MySQL default port
-        'HOST': 'localhost'
-    }
+    'default': dj_database_url.config()
 }
 
 
