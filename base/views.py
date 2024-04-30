@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout
+from rest_framework.authentication import BasicAuthentication, SessionAuthentication, TokenAuthentication
 from .models import Topic, Message, User
 from .forms import RoomForm, UserForm, MyUserCreationForm
 
@@ -112,6 +113,7 @@ def updateUser(request):
 # views.py in one of your Django apps
 
 class U_userCreateAPIView(generics.ListCreateAPIView):
+    authentication_classes = (SessionAuthentication, BasicAuthentication, TokenAuthentication)
     queryset = U_user.objects.all()
     serializer_class = U_userSerializer
 
