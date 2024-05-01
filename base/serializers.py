@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import U_user, role, permission, Internal_User, role_permission, user_meta, Property_Owner_meta, Property_Owner, Property, Property_meta, Property_Bills, Bills, Sector, Zone, Society, Property_Type
+from .models import *
 
 
 class U_userSerializer(serializers.ModelSerializer):
@@ -83,3 +83,4 @@ class Property_TypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Property_Type
         fields = '__all__'
+

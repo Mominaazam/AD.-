@@ -154,20 +154,27 @@ class Bills(models.Model):
     Created_at = models.DateTimeField()
     Updated_at = models.DateTimeField()
 
-class Sector(models.Model):
-    ID = models.PositiveBigIntegerField() #max_length=20,
-    Name = models.CharField(max_length=255)
-    Zone_ID = models.PositiveBigIntegerField() #max_length=20,
-    Created_by = models.PositiveBigIntegerField() #max_length=20,
-    Created_at = models.DateTimeField()
-    Updated_at = models.DateTimeField()
-
+    
 class Zone(models.Model):
     ID = models.PositiveBigIntegerField() #max_length=20,
     Name = models.CharField(max_length=255)
     Created_by = models.PositiveBigIntegerField() #max_length=20,
     Created_at = models.DateTimeField()
     Updated_at = models.DateTimeField()
+
+
+class Sector(models.Model):
+    ParentID = models.PositiveBigIntegerField()
+    Name = models.CharField(max_length=255)
+    Zone_ID = models.ForeignKey(Zone, on_delete=models.CASCADE) #max_length=20,
+    Created_by = models.PositiveBigIntegerField() #max_length=20,
+    Created_at = models.DateTimeField()
+    Updated_at = models.DateTimeField()
+
+
+
+
+
 
 class Society(models.Model):
     ID = models.PositiveBigIntegerField() #max_length=20,
