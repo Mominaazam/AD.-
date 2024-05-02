@@ -173,9 +173,6 @@ class Sector(models.Model):
 
 
 
-
-
-
 class Society(models.Model):
     ID = models.PositiveBigIntegerField() #max_length=20,
     Image = models.TextField()
