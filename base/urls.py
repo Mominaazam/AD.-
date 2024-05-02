@@ -45,13 +45,13 @@ urlpatterns = [
     path('Bills/<int:pk>/', BillsRetrieveUpdateDestroyAPIView.as_view(), name='Bills-detail'),
 
     path('Sector/', SectorListCreateAPIViews.as_view(), name='Sector-list-create'),
-    path('sector/<int:pk>/', SectorRetrieveUpdateDestroyAPIView.as_view(), name='Sector-detail'),
+    path('Sector/<int:pk>/', SectorRetrieveUpdateDestroyAPIView.as_view(), name='Sector-detail'),
     
     path('Zone/', ZoneListCreateAPIView.as_view(), name='Zone-list-create'),
-    path('zone/<int:pk>/', ZoneRetrieveUpdateDestroyAPIView.as_view(), name='Zone-detail'),
+    path('Zone/<int:pk>/', ZoneRetrieveUpdateDestroyAPIView.as_view(), name='Zone-detail'),
 
     path('Society/', SocietyListCreateAPIView.as_view(), name='Society-list-create'),
-    path('society/<int:pk>/', SocietyRetrieveUpdateDestroyAPIView.as_view(), name='Society-detail'),
+    path('Society/<int:pk>/', SocietyRetrieveUpdateDestroyAPIView.as_view(), name='Society-detail'),
     
     path('Property_Type', PropertyTypeListCreateAPIView.as_view(), name='Property_Type-create-list'),
     path('Property_Type/<int:pk>/', PropertyTypeRetrieveUpdateDestroyAPIView.as_view(), name='Property_Type-detail'),
